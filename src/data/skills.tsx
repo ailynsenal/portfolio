@@ -13,25 +13,31 @@ import Jest from "../assets/svgs/Jest";
 import Git from "../assets/svgs/Git";
 import Jira from "../assets/svgs/Jira";
 import GithubActions from "../assets/svgs/GithubActions";
+import Node from "../assets/svgs/Node";
+import Contentful from "../assets/images/contentful.png";
+import Storybook from "../assets/images/storybook.png";
 
 const frameworks = [
-  { icon: <React />, label: "React" },
-  { icon: <Redux />, label: "Redux" },
-  { icon: <Javacript />, label: "Javacript" },
-  { icon: <Typescript />, label: "Typescript" },
-  { icon: <HTML />, label: "HTML" },
-  { icon: <CSS />, label: "CSS" },
-  { icon: <SASS />, label: "SASS" },
-  { icon: <Tailwind />, label: "Tailwind" },
+  { icon: <Javacript />, img: "", label: "Javacript" },
+  { icon: <Typescript />, img: "", label: "Typescript" },
+  { icon: <React />, img: "", label: "React / React Native" },
+  { icon: <Node />, img: "", label: "Node.js" },
+  { icon: <Redux />, img: "", label: "Redux" },
+  { icon: <HTML />, img: "", label: "HTML" },
+  { icon: <CSS />, img: "", label: "CSS" },
+  { icon: <SASS />, img: "", label: "SASS" },
+  { icon: <Tailwind />, img: "", label: "Tailwind" },
 ];
 
 const tools = [
-  { icon: <AWS />, label: "AWS Basics" },
-  { icon: <Terraform />, label: "Terraform" },
-  { icon: <Jest />, label: "Jest" },
-  { icon: <Git />, label: "Git" },
-  { icon: <Jira />, label: "Jira" },
-  { icon: <GithubActions />, label: "GH Actions" },
+  { icon: <AWS />, img: "", label: "AWS Basics" },
+  { icon: <Terraform />, img: "", label: "Terraform" },
+  { icon: <Git />, img: "", label: "Git" },
+  { icon: <GithubActions />, img: "", label: "GH Actions" },
+  { icon: "", img: Contentful, label: "Contentful" },
+  { icon: "", img: Storybook, label: "Storybook" },
+  { icon: <Jest />, img: "", label: "Jest" },
+  { icon: <Jira />, img: "", label: "Jira" },
 ];
 
 export const skills = [...frameworks, ...tools];

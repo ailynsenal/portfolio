@@ -1,15 +1,23 @@
 import type { ReactNode } from "react";
 
 type Props = {
-  icon: ReactNode;
+  icon?: ReactNode;
+  img?: string;
   label: string;
 };
 
-const Skill = ({ icon, label }: Props) => {
+const Skill = ({ icon, img, label }: Props) => {
+  console.log("img", img);
   return (
-    <div className="flex flex-col gap-3 items-center justify-center min-w-36 rounded-lg border border-rose-100/15 py-2 px-3 hover:scale-110 hover:border-rose-500">
-      <div className="">{icon}</div>
-      <p>{label}</p>
+    <div className="flex flex-col gap-3 items-center justify-center w-36 rounded-lg border border-rose-100/15 py-2 px-3 hover:scale-110">
+      <div>
+        {img ? (
+          <img src={img} alt={label} className="w-20 h-18 rounded-lg" />
+        ) : (
+          <>{icon}</>
+        )}
+      </div>
+      <p className="text-center">{label}</p>
     </div>
   );
 };

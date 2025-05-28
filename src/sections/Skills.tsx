@@ -31,7 +31,12 @@ const Skills = ({ ref }: Props) => {
         viewport={{ once: true, amount: 0 }}
       >
         {skills.map((skill, index) => (
-          <Skill key={index} icon={skill.icon} label={skill.label} />
+          <Skill
+            key={index}
+            icon={skill.icon}
+            label={skill.label}
+            img={skill.img}
+          />
         ))}
       </motion.div>
     </section>

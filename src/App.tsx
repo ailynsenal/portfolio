@@ -50,9 +50,16 @@ function App() {
         <WorkExperience ref={experienceRef} />
         <Projects ref={projectsRef} />
         <Contact ref={contactRef} />
-        <div id="footer" className="flex flex-wrap justify-between py-12">
+        <div id="footer" className="flex flex-wrap justify-end py-12">
           <p>
-            © ailynangeles <span className="text-xs"> ♡</span>
+            design inspo ©{" "}
+            <a
+              href="https://www.jomkv.tech/"
+              target="_blank"
+              className="underline text-primary"
+            >
+              here
+            </a>
           </p>
         </div>
       </main>
