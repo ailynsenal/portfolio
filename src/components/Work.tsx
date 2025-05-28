@@ -11,7 +11,7 @@ const Work = ({ work, index }: Props) => {
   return (
     <div className="flex flex-col gap-6">
       <div
-        className={`absolute left-0 z-30 rounded-full border-8 border-rose-500 hidden sm:left-[49.4%] sm:block`}
+        className={`absolute left-0 z-30 rounded-full border-8 border-rose-500 hidden sm:left-[49.5%] sm:block`}
       ></div>
       <div
         className={`flex border border-rose-100/15 rounded-lg p-3 w-full ${

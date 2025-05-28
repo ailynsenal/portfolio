@@ -40,19 +40,20 @@ const Home = ({ ref }: Props) => {
             with a focus on{" "}
             <span className="text-primary">front-end development</span>.
           </p>
-          <p className="flex gap-2 font-semibold text-3xl animate-bounce my-4">
-            <span className="text-primary">ctrl</span>
+          <p className="font-leckerlie-one text-lg animate-bounce my-4">
+            {/* <span className="text-primary">ctrl</span>
             <span>+</span>
             <span className="text-primary">{"<code>"}</span>
             <span>+</span>
-            <span className="text-primary">create</span>
+            <span className="text-primary">create</span> */}
+            ~ never stop learning ~
           </p>
 
           <div className="flex items-center gap-6">
             <a
               href={CV}
               download="AILYN_ANGELES_CV"
-              className="border border-rose-500 w-fit rounded-md text-base py-2 px-3 hover:bg-rose-100/15 hover:text-secondary"
+              className="border border-rose-100/15 w-fit rounded-md text-base py-2 px-3 hover:border-rose-500 hover:bg-rose-100/15 hover:text-secondary"
             >
               Download CV
             </a>

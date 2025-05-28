@@ -10,10 +10,7 @@ const About = ({ ref }: Props) => {
   return (
     <section id="about" className="flex flex-col gap-12 py-24" ref={ref}>
       <article className="flex flex-col gap-12">
-        <h1 className="text-4xl">
-          About me
-          <span className="text-primary text-sm"> ♡</span>
-        </h1>
+        <h1 className="text-4xl">About me</h1>
         <motion.div
           className="flex flex-col font-roboto text-lg gap-6"
           initial={{
@@ -46,10 +43,7 @@ const About = ({ ref }: Props) => {
         </motion.div>
       </article>
       <div className="flex flex-col gap-12">
-        <h1 className="text-4xl">
-          Education
-          <span className="text-primary text-sm"> ♡</span>
-        </h1>
+        <h1 className="text-4xl">Education</h1>
         <motion.div
           initial={{
             opacity: 0,
@@ -78,8 +72,8 @@ const About = ({ ref }: Props) => {
               <div className="flex flex-col gap-3">
                 <h1 className="text-primary">{edu.course}</h1>
                 <div>
-                  <p>{edu.duration}</p>
                   <p>{edu.school}</p>
+                  <p>{edu.duration}</p>
                 </div>
               </div>
             </article>
