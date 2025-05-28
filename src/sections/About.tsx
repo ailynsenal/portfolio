@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 import { education } from "../data/education";
-import type { RefObject } from "react";
+import type { SectionRef } from "../types";
 
 interface Props {
-  ref: RefObject<HTMLDivElement | null>;
+  ref: SectionRef;
 }
 
 const About = ({ ref }: Props) => {

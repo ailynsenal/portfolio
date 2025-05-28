@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import Her from "../assets/images/her.jpg";
 import CV from "../assets/files/AILYN_ANGELES_CV.pdf";
 import { socials } from "../data/socials";
-import type { RefObject } from "react";
+import type { SectionRef } from "../types";
 
 interface Props {
-  ref: RefObject<HTMLDivElement | null>;
+  ref: SectionRef;
 }
 
 const Home = ({ ref }: Props) => {

@@ -9,11 +9,11 @@ type Props = {
 
 const NavBar = ({ activeItem, title, onClickItem }: Props) => {
   const menuItems = [
-    { id: "home", name: "HOME", link: "#home" },
-    { id: "about", name: "ABOUT", link: "#about" },
-    { id: "skills", name: "SKILLS", link: "#skills" },
-    { id: "experience", name: "EXPERIENCE", link: "#experience" },
-    { id: "projects", name: "PROJECTS", link: "#projects" },
+    { id: "about", name: "About", link: "#about" },
+    { id: "skills", name: "Skills", link: "#skills" },
+    { id: "experience", name: "Experience", link: "#experience" },
+    { id: "projects", name: "Projects", link: "#projects" },
+    { id: "contact", name: "Contact", link: "#contact" },
   ];
 
   return (

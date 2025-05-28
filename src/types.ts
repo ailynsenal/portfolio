@@ -1,3 +1,5 @@
+import type { RefObject } from "react";
+
 export type SectionKey = "home" | "about" | "skills" | "experience" | "projects" | "contact";
 
 export type MenuItem = {
@@ -18,5 +20,7 @@ export type ProjectItem = {
   title: string;
   description: string;
   logo: string;
-  link: string;
+  link: string | null;
 }
+
+export type SectionRef = RefObject<HTMLDivElement | null>;
