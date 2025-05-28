@@ -10,7 +10,11 @@ const Project = ({ item }: Props) => {
 
   return (
     <div className="flex flex-col gap-6 w-full sm:w-2/5">
-      <img src={logo} alt={title} className="rounded-lg h-56 hover:scale-105" />
+      <img
+        src={logo}
+        alt={title}
+        className="rounded-lg h-56 hover:scale-105 hover:border-rose-500"
+      />
       <div className="">
         <a
           href={link}

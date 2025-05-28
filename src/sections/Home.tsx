@@ -1,11 +1,36 @@
+import { motion } from "motion/react";
 import Her from "../assets/images/her.jpg";
 import CV from "../assets/files/AILYN_ANGELES_CV.pdf";
 import { socials } from "../data/socials";
+import type { RefObject } from "react";
 
-const Home = () => {
+interface Props {
+  ref: RefObject<HTMLDivElement | null>;
+}
+
+const Home = ({ ref }: Props) => {
   return (
-    <section id="home" className=" flex items-center py-6 sm:min-h-screen">
-      <div className="flex flex-col-reverse gap-6 sm:flex-row">
+    <section
+      id="home"
+      className=" flex items-center py-6 sm:min-h-screen"
+      ref={ref}
+    >
+      <motion.div
+        className="flex flex-col-reverse gap-6 sm:flex-row"
+        initial={{
+          opacity: 0,
+          y: 100,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 1,
+            ease: "easeIn",
+          },
+        }}
+        viewport={{ once: true, amount: 0 }}
+      >
         <div className="flex flex-col gap-4 w-full sm:w-3/4">
           <h1 className="font-semibold text-xl w-fit py-2">
             Hey!👋 I'm <span className="text-primary">Ailyn Angeles</span>
@@ -27,7 +52,7 @@ const Home = () => {
             <a
               href={CV}
               download="AILYN_ANGELES_CV"
-              className="border border-rose-300 w-fit rounded-md text-base py-2 px-3 hover:bg-rose-100/15 hover:text-secondary"
+              className="border border-rose-500 w-fit rounded-md text-base py-2 px-3 hover:bg-rose-100/15 hover:text-secondary"
             >
               Download CV
             </a>
@@ -50,7 +75,7 @@ const Home = () => {
             className="rounded-full w-50 sm:w-72"
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

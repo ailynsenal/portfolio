@@ -1,4 +1,4 @@
-export type SectionKey = "home" | "skills" | 'projects' | "about" | "contact";
+export type SectionKey = "home" | "about" | "skills" | "experience" | "projects" | "contact";
 
 export type MenuItem = {
   id: number | string;
