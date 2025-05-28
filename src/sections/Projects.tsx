@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
 import Project from "../components/Project";
 import { projects } from "../data/project";
-import type { RefObject } from "react";
+
+import type { SectionRef } from "../types";
 
 interface Props {
-  ref: RefObject<HTMLDivElement | null>;
+  ref: SectionRef;
 }
 
 const Projects = ({ ref }: Props) => {
@@ -15,7 +16,7 @@ const Projects = ({ ref }: Props) => {
         <span className="text-primary text-sm"> ♡</span>
       </h1>
       <motion.div
-        className="relative flex flex-col gap-12"
+        className="relative flex flex-col gap-12 sm:flex-row"
         initial={{
           opacity: 0,
           y: 100,

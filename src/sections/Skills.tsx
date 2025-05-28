@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
 import Skill from "../components/Skill";
 import { skills } from "../data/skills";
-import type { RefObject } from "react";
+import type { SectionRef } from "../types";
 
 interface Props {
-  ref: RefObject<HTMLDivElement | null>;
+  ref: SectionRef;
 }
 
 const Skills = ({ ref }: Props) => {

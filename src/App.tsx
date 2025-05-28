@@ -6,7 +6,8 @@ import Home from "./sections/Home";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import { useRef, useState } from "react";
-import type { SectionKey } from "./types";
+import type { SectionKey, SectionRef } from "./types";
+import Contact from "./sections/Contact";
 
 function App() {
   const [activeNavItem, setActiveNavItem] = useState<SectionKey>("home");
@@ -17,10 +18,7 @@ function App() {
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const sectionRefs: Record<
-    SectionKey,
-    React.RefObject<HTMLDivElement | null>
-  > = {
+  const sectionRefs: Record<SectionKey, SectionRef> = {
     home: homeRef,
     about: aboutRef,
     skills: skillsRef,
@@ -51,14 +49,11 @@ function App() {
         <Skills ref={skillsRef} />
         <WorkExperience ref={experienceRef} />
         <Projects ref={projectsRef} />
-        <div className="flex items-center justify-center">
-          <img
-            src={
-              "https://sismo.app/wp-content/uploads/2019/02/under-construction-gif-11.gif"
-            }
-            alt="Under Construction"
-            className="w-full rounded-lg mt-12 sm:h-[400px]"
-          />
+        <Contact ref={contactRef} />
+        <div id="footer" className="flex flex-wrap justify-between py-12">
+          <p>
+            © ailynangeles <span className="text-xs"> ♡</span>
+          </p>
         </div>
       </main>
     </div>

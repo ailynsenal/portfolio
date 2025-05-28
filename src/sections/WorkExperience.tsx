@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
 import Work from "../components/Work";
 import { works } from "../data/works";
-import type { RefObject } from "react";
+import type { SectionRef } from "../types";
 
 interface Props {
-  ref: RefObject<HTMLDivElement | null>;
+  ref: SectionRef;
 }
 
 const WorkExperience = ({ ref }: Props) => {
