@@ -1,18 +1,39 @@
+import { motion } from "motion/react";
 import Project from "../components/Project";
 import { projects } from "../data/project";
+import type { RefObject } from "react";
 
-const Projects = () => {
+interface Props {
+  ref: RefObject<HTMLDivElement | null>;
+}
+
+const Projects = ({ ref }: Props) => {
   return (
-    <section id="experience" className="flex flex-col gap-12 py-12">
+    <section id="experience" className="flex flex-col gap-12 py-24" ref={ref}>
       <h1 className="text-4xl">
         Projects
-        <span className="text-primary text-sm"> ❤</span>
+        <span className="text-primary text-sm"> ♡</span>
       </h1>
-      <div className="relative flex flex-col gap-12">
-        {projects.map((project) => (
-          <Project item={project} />
+      <motion.div
+        className="relative flex flex-col gap-12"
+        initial={{
+          opacity: 0,
+          y: 100,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 1,
+            ease: "easeIn",
+          },
+        }}
+        viewport={{ once: true, amount: 0 }}
+      >
+        {projects.map((project, index) => (
+          <Project key={index} item={project} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

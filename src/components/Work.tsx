@@ -16,7 +16,7 @@ const Work = ({ work, index }: Props) => {
       <div
         className={`flex border border-rose-100/15 rounded-lg p-3 w-full ${
           index % 2 == 0 ? "place-self-start" : "place-self-end"
-        } sm:w-[45%] hover:scale-110`}
+        } sm:w-[45%] hover:scale-110 hover:border-rose-500`}
       >
         <div className="flex items-center gap-6">
           <img

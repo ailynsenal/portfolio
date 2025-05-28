@@ -1,9 +1,10 @@
+import type { SectionKey } from "../types";
 import Menu from "./Menu";
 
 type Props = {
   activeItem: string;
   title: string;
-  onClickItem: () => void;
+  onClickItem: (item: SectionKey) => void;
 };
 
 const NavBar = ({ activeItem, title, onClickItem }: Props) => {
@@ -20,7 +21,7 @@ const NavBar = ({ activeItem, title, onClickItem }: Props) => {
       <div className="flex flex-col items-center justify-center mx-auto w-full sm:flex-row sm:w-[80vw]">
         <a href="/" className="font-leckerlie-one text-primary mb-4 sm:mb-0">
           {title}
-          <span className="text-white text-xs"> ❤</span>
+          <span className="text-white text-xs"> ♡</span>
         </a>
 
         <Menu

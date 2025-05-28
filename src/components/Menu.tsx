@@ -14,7 +14,7 @@ const Menu = ({ active, menuItems, onItemClick }: Props) => {
           key={index}
           className={`transition ease-in-out hover:text-rose-300 hover:scale-110 ${
             active === item.id
-              ? "font-bold border-b-2 border-rose-300"
+              ? "font-bold border-b-2 border-rose-500"
               : "font-semibold"
           }`}
           onClick={() => onItemClick(item.id as SectionKey)}
