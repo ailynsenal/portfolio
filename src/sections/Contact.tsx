@@ -11,10 +11,7 @@ interface Props {
 const Contact = ({ ref }: Props) => {
   return (
     <section id="contact" className="flex flex-col gap-12 py-24" ref={ref}>
-      <h1 className="text-4xl">
-        Contact
-        <span className="text-primary text-sm"> ♡</span>
-      </h1>
+      <h1 className="text-4xl">HOW TO REACH ME</h1>
       <motion.div
         className="relative flex flex-col gap-12"
         initial={{
@@ -31,7 +28,6 @@ const Contact = ({ ref }: Props) => {
         }}
         viewport={{ once: true, amount: 0 }}
       >
-        <h2>HOW TO REACH ME</h2>
         <div className="flex flex-wrap gap-12">
           <div className="flex flex-col gap-3 pr-12">
             <p>Send me an email:</p>
