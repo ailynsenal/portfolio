@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import Her from "../assets/images/her.jpg";
-import CV from "../assets/files/AILYN_ANGELES_CV.pdf";
+import CV from "../assets/files/AILYN_ANGELES.pdf";
 import { socials } from "../data/socials";
 import type { SectionRef } from "../types";
 
@@ -41,11 +41,6 @@ const Home = ({ ref }: Props) => {
             <span className="text-primary">front-end development</span>.
           </p>
           <p className="font-leckerlie-one text-lg animate-bounce my-4">
-            {/* <span className="text-primary">ctrl</span>
-            <span>+</span>
-            <span className="text-primary">{"<code>"}</span>
-            <span>+</span>
-            <span className="text-primary">create</span> */}
             ~ never stop learning ~
           </p>
 
