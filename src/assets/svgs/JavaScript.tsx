@@ -1,4 +1,4 @@
-const Javacript = () => {
+const JavaScript = () => {
   return (
     <svg
       width={48}
@@ -14,4 +14,4 @@ const Javacript = () => {
   );
 };
 
-export default Javacript;
+export default JavaScript;

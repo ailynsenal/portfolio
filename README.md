@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# ailynangeles ♡ portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio site: who I am, the tech I work with, where I've worked and what I've built.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/) for dev server and builds
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [Motion](https://motion.dev/) for scroll animations
+- ESLint (incl. `jsx-a11y`) and Prettier
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Requires Node.js 20.19 or newer (see [`.nvmrc`](.nvmrc)).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+nvm use        # optional, picks up the version from .nvmrc
+npm install
+npm run dev    # http://localhost:5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Script                 | What it does                            |
+| ---------------------- | --------------------------------------- |
+| `npm run dev`          | Start the dev server with hot reload    |
+| `npm run build`        | Type-check and build to `dist/`         |
+| `npm run preview`      | Serve the production build locally      |
+| `npm run typecheck`    | Run the TypeScript compiler only        |
+| `npm run lint`         | Lint with ESLint                        |
+| `npm run format`       | Format all files with Prettier          |
+| `npm run format:check` | Check formatting without changing files |
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Project structure
+
 ```
+src/
+  sections/    page sections (Home, About, Skills, Experience, Projects, Contact)
+  components/  reusable UI pieces (NavBar, Menu, Skill, Work, Project)
+  data/        content — edit these to update skills, jobs, projects, education
+  assets/      images, SVG icon components and the downloadable CV
+```
+
+Most content updates only need a change in `src/data/`. To update the CV, replace
+`src/assets/files/AILYN_ANGELES.pdf`.

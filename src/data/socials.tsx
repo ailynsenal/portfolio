@@ -9,7 +9,7 @@ export const socials = [
   },
   {
     id: "linkedIn",
-    link: "https://www.linkedin.com/in/ailyn-angeles/",
+    link: "https://www.linkedin.com/in/ailynangeles/",
     icon: <LinkedIn />,
   },
 ];

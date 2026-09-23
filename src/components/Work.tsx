@@ -20,6 +20,7 @@ const Work = ({ work, index }: Props) => {
       >
         <div className="flex items-center gap-6">
           <img
+            loading="lazy"
             src={logo}
             alt={company}
             className="rounded-full h-16 w-16 sm:h-20 sm:w-20"

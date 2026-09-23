@@ -38,14 +38,22 @@ const Contact = ({ ref }: Props) => {
           </div>
           <div className="flex flex-col gap-3 pr-12">
             <p>Github:</p>
-            <a className="flex gap-3" href="https://github.com/ailynsenal">
+            <a
+              className="flex gap-3"
+              href="https://github.com/ailynsenal"
+              target="_blank"
+            >
               <Github stroke="#ff637e" />
               /ailynsenal
             </a>
           </div>
           <div className="flex flex-col gap-3 pr-12">
             <p>LinkedIn:</p>
-            <a className="flex gap-3" href="www.linkedin.com/in/ailynangeles">
+            <a
+              className="flex gap-3"
+              href="https://www.linkedin.com/in/ailynangeles/"
+              target="_blank"
+            >
               <LinkedIn stroke="#ff637e" />
               /in/ailynangeles
             </a>

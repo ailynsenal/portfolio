@@ -10,7 +10,7 @@ interface Props {
 
 const Projects = ({ ref }: Props) => {
   return (
-    <section id="experience" className="flex flex-col gap-12 py-24" ref={ref}>
+    <section id="projects" className="flex flex-col gap-12 py-24" ref={ref}>
       <h1 className="text-4xl">Projects</h1>
       <motion.div
         className="relative flex flex-col gap-12 sm:flex-row"
