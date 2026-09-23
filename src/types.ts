@@ -1,27 +1,62 @@
-import type { RefObject } from "react";
+import type { ReactNode } from "react";
 
 export type SectionKey =
   "home" | "about" | "skills" | "experience" | "projects" | "contact";
 
-export type MenuItem = {
-  id: number | string;
-  name: string;
-  link: string;
+export type NavItem = {
+  id: SectionKey;
+  label: string;
 };
 
-export type WorkItem = {
+export type ExperienceJob = {
+  type: "job";
+  id: string;
   position: string;
   company: string;
+  start: string;
+  end?: string;
+  description: string[];
+};
+
+export type ExperienceNote = {
+  type: "note";
+  id: string;
+  note: string;
+};
+
+export type ExperienceEntry = ExperienceJob | ExperienceNote;
+
+export type EducationItem = {
+  id: string;
+  course: string;
+  school: string;
   duration: string;
-  description: string;
   logo: string;
+};
+
+export type SkillItem = {
+  label: string;
+  icon?: ReactNode;
+  img?: string;
+};
+
+export type SkillGroup = {
+  title: string;
+  items: SkillItem[];
 };
 
 export type ProjectItem = {
+  id: string;
   title: string;
   description: string;
   logo: string;
-  link: string | null;
+  link: string;
 };
 
-export type SectionRef = RefObject<HTMLDivElement | null>;
+export type SocialItem = {
+  id: string;
+  label: string;
+  handle: string;
+  link: string;
+  icon: ReactNode;
+};

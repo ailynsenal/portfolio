@@ -37,10 +37,12 @@ npm run dev    # http://localhost:5173
 ```
 src/
   sections/    page sections (Home, About, Skills, Experience, Projects, Contact)
-  components/  reusable UI pieces (NavBar, Menu, Skill, Work, Project)
-  data/        content — edit these to update skills, jobs, projects, education
+  components/  reusable UI pieces (NavBar, NavLink, Section, FadeIn, TimelineItem,
+               ExperienceCard, ProjectCard, SkillBadge)
+  constants/   content — edit these to update skills, jobs, projects, education
+  types.ts     shared data types (NavItem, ExperienceEntry, SkillItem, ...)
   assets/      images, SVG icon components and the downloadable CV
 ```
 
-Most content updates only need a change in `src/data/`. To update the CV, replace
+Most content updates only need a change in `src/constants/`. To update the CV, replace
 `src/assets/files/AILYN_ANGELES.pdf`.

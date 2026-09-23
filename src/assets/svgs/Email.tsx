@@ -1,4 +1,4 @@
-const Email = ({ fill = "#ffffff" }: { fill?: string }) => {
+const Email = ({ fill = "currentColor" }: { fill?: string }) => {
   return (
     <svg
       width={24}

@@ -1,4 +1,4 @@
-const LinkedIn = ({ stroke = "#ffffff" }: { stroke?: string }) => {
+const LinkedIn = ({ stroke = "currentColor" }: { stroke?: string }) => {
   return (
     <svg
       width={24}

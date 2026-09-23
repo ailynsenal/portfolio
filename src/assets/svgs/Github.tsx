@@ -1,4 +1,4 @@
-const Github = ({ stroke = "#ffffff" }: { stroke?: string }) => {
+const Github = ({ stroke = "currentColor" }: { stroke?: string }) => {
   return (
     <svg
       width={24}

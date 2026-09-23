@@ -1,55 +1,40 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import About from "./sections/About";
-import WorkExperience from "./sections/WorkExperience";
+import Experience from "./sections/Experience";
 import Home from "./sections/Home";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
-import { useRef, useState } from "react";
-import type { SectionKey, SectionRef } from "./types";
+import { useState } from "react";
+import type { SectionKey } from "./types";
 import Contact from "./sections/Contact";
 
 function App() {
-  const [activeNavItem, setActiveNavItem] = useState<SectionKey>("home");
-  const homeRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const skillsRef = useRef<HTMLDivElement>(null);
-  const experienceRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState<SectionKey>("home");
 
-  const sectionRefs: Record<SectionKey, SectionRef> = {
-    home: homeRef,
-    about: aboutRef,
-    skills: skillsRef,
-    experience: experienceRef,
-    projects: projectsRef,
-    contact: contactRef,
-  };
+  const scrollToSection = (section: SectionKey) => {
+    const element = document.getElementById(section);
+    if (!element) return;
 
-  const updateActiveNavItem = (section: SectionKey) => {
-    const ref = sectionRefs[section];
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-      window.history.pushState(null, "", `#${section}`);
-      setActiveNavItem(section);
-    }
+    element.scrollIntoView({ behavior: "smooth" });
+    window.history.pushState(null, "", `#${section}`);
+    setActiveSection(section);
   };
 
   return (
-    <div className="bg-neutral-800 text-white font-national-park">
+    <div className="bg-page text-fg font-national-park">
       <NavBar
-        activeItem={activeNavItem}
         title="ailynangeles"
-        onClickItem={updateActiveNavItem}
+        activeSection={activeSection}
+        onNavigate={scrollToSection}
       />
       <main className="mx-auto sm:w-[80vw] px-3">
-        <Home ref={homeRef} />
-        <About ref={aboutRef} />
-        <Skills ref={skillsRef} />
-        <WorkExperience ref={experienceRef} />
-        <Projects ref={projectsRef} />
-        <Contact ref={contactRef} />
+        <Home />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
         <div id="footer" className="flex flex-wrap py-12">
           <p>© ailynangeles</p>
         </div>

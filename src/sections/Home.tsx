@@ -1,36 +1,12 @@
-import { motion } from "motion/react";
-import Her from "../assets/images/her.jpg";
+import Her from "../assets/images/ailyn.jpg";
 import CV from "../assets/files/AILYN_ANGELES.pdf";
-import { socials } from "../data/socials";
-import type { SectionRef } from "../types";
+import FadeIn from "../components/FadeIn";
+import { socials } from "../constants/socials";
 
-interface Props {
-  ref: SectionRef;
-}
-
-const Home = ({ ref }: Props) => {
+const Home = () => {
   return (
-    <section
-      id="home"
-      className=" flex items-center py-6 sm:min-h-screen"
-      ref={ref}
-    >
-      <motion.div
-        className="flex flex-col-reverse gap-6 sm:flex-row"
-        initial={{
-          opacity: 0,
-          y: 100,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 1,
-            ease: "easeIn",
-          },
-        }}
-        viewport={{ once: true, amount: 0 }}
-      >
+    <section id="home" className="flex items-center py-6 sm:min-h-screen">
+      <FadeIn className="flex flex-col-reverse gap-6 sm:flex-row">
         <div className="flex flex-col gap-4 w-full sm:w-3/4">
           <h1 className="font-semibold text-xl w-fit py-2">
             Hey!👋 I'm <span className="text-primary">Ailyn Angeles</span>
@@ -48,7 +24,7 @@ const Home = ({ ref }: Props) => {
             <a
               href={CV}
               download="AILYN_ANGELES_CV"
-              className="border border-rose-100/15 w-fit rounded-md text-base py-2 px-3 hover:border-rose-500 hover:bg-rose-100/15 hover:text-secondary"
+              className="border border-line/15 w-fit rounded-md text-base py-2 px-3 hover:border-accent hover:bg-line/15 hover:text-secondary"
             >
               Download CV
             </a>
@@ -57,6 +33,8 @@ const Home = ({ ref }: Props) => {
                 key={social.id}
                 href={social.link}
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
                 className="transition ease-in-out hover:scale-125"
               >
                 {social.icon}
@@ -71,7 +49,7 @@ const Home = ({ ref }: Props) => {
             className="rounded-full w-50 sm:w-72"
           />
         </div>
-      </motion.div>
+      </FadeIn>
     </section>
   );
 };

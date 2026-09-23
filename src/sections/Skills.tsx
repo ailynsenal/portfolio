@@ -1,42 +1,26 @@
-import { motion } from "motion/react";
-import Skill from "../components/Skill";
-import { skills } from "../data/skills";
-import type { SectionRef } from "../types";
+import FadeIn from "../components/FadeIn";
+import Section from "../components/Section";
+import SkillBadge from "../components/SkillBadge";
+import { skillGroups } from "../constants/skills";
 
-interface Props {
-  ref: SectionRef;
-}
-
-const Skills = ({ ref }: Props) => {
+const Skills = () => {
   return (
-    <section id="skills" className="flex flex-col gap-12 py-24" ref={ref}>
-      <h1 className="text-4xl">Skills</h1>
-      <motion.div
-        className="flex flex-row flex-wrap gap-6"
-        initial={{
-          opacity: 0,
-          y: 100,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 1,
-            ease: "easeIn",
-          },
-        }}
-        viewport={{ once: true, amount: 0 }}
-      >
-        {skills.map((skill, index) => (
-          <Skill
-            key={index}
-            icon={skill.icon}
-            label={skill.label}
-            img={skill.img}
-          />
+    <Section id="skills" title="Skills">
+      <div className="flex flex-col gap-8">
+        {skillGroups.map((group) => (
+          <FadeIn key={group.title} className="flex flex-col gap-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-tertiary">
+              {group.title}
+            </h3>
+            <div className="flex flex-row flex-wrap gap-3">
+              {group.items.map((skill) => (
+                <SkillBadge key={skill.label} skill={skill} />
+              ))}
+            </div>
+          </FadeIn>
         ))}
-      </motion.div>
-    </section>
+      </div>
+    </Section>
   );
 };
 

@@ -1,34 +1,37 @@
+import { navItems } from "../constants/navigation";
 import type { SectionKey } from "../types";
-import Menu from "./Menu";
+import NavLink from "./NavLink";
+import ThemeToggle from "./ThemeToggle";
 
 type Props = {
-  activeItem: string;
   title: string;
-  onClickItem: (item: SectionKey) => void;
+  activeSection: SectionKey;
+  onNavigate: (section: SectionKey) => void;
 };
 
-const NavBar = ({ activeItem, title, onClickItem }: Props) => {
-  const menuItems = [
-    { id: "about", name: "About", link: "#about" },
-    { id: "skills", name: "Skills", link: "#skills" },
-    { id: "experience", name: "Experience", link: "#experience" },
-    { id: "projects", name: "Projects", link: "#projects" },
-    { id: "contact", name: "Contact", link: "#contact" },
-  ];
-
+const NavBar = ({ title, activeSection, onNavigate }: Props) => {
   return (
-    <nav className="sticky top-0 w-full p-4 z-10 bg-neutral-900">
-      <div className="flex flex-col items-center justify-center mx-auto w-full sm:flex-row sm:w-[80vw]">
-        <a href="/" className="font-leckerlie-one text-primary mb-4 sm:mb-0">
+    <nav className="sticky top-0 z-10 w-full bg-surface p-4">
+      <div className="mx-auto flex w-full flex-col items-center justify-center sm:w-[80vw] sm:flex-row">
+        <a
+          href="/"
+          className="mb-4 font-national-park font-bold text-primary sm:mb-0"
+        >
           {title}
-          <span className="text-white text-xs"> ♡</span>
         </a>
-
-        <Menu
-          active={activeItem}
-          menuItems={menuItems}
-          onItemClick={onClickItem}
-        />
+        <div className="flex items-center gap-5 sm:ml-auto">
+          <ul className="flex flex-wrap items-center justify-center gap-5 font-national-park text-base sm:justify-end">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.id}
+                item={item}
+                isActive={item.id === activeSection}
+                onNavigate={onNavigate}
+              />
+            ))}
+          </ul>
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );
