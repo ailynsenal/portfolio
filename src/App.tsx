@@ -22,7 +22,7 @@ function App() {
   };
 
   return (
-    <div className="bg-neutral-800 text-white font-national-park">
+    <div className="bg-page text-fg font-national-park">
       <NavBar
         title="ailynangeles"
         activeSection={activeSection}

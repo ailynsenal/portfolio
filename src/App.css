@@ -1,16 +1,51 @@
 @import "tailwindcss";
 
+/* `dark:` follows the toggle (data-theme on <html>), not only the OS setting. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   --font-national-park: "National Park", sans-serif;
   --font-leckerlie-one: "Leckerli One", cursive;
   --font-roboto: "Roboto", sans-serif;
 }
 
+/* Light theme. Text colours are darker shades so they stay readable on white. */
+:root {
+  color-scheme: light;
+  --page: var(--color-neutral-100);
+  --surface: var(--color-white);
+  --fg: var(--color-neutral-900);
+  --muted: var(--color-neutral-300);
+  --primary: var(--color-emerald-700);
+  --secondary: var(--color-emerald-600);
+  --tertiary: var(--color-gray-600);
+  --accent: var(--color-emerald-600);
+  --line: var(--color-emerald-900);
+}
+
+/* Dark theme — the original look. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: var(--color-neutral-800);
+  --surface: var(--color-neutral-900);
+  --fg: var(--color-white);
+  --muted: var(--color-neutral-700);
+  --primary: var(--color-emerald-400);
+  --secondary: var(--color-emerald-300);
+  --tertiary: var(--color-gray-400);
+  --accent: var(--color-emerald-500);
+  --line: var(--color-emerald-100);
+}
+
 /* Colour tokens — each generates text-*, bg-*, border-* utilities. */
 @theme inline {
-  --color-primary: var(--color-emerald-400);
-  --color-secondary: var(--color-emerald-300);
-  --color-tertiary: var(--color-gray-400);
-  --color-accent: var(--color-emerald-500);
-  --color-line: var(--color-emerald-100);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
 }

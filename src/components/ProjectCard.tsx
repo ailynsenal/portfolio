@@ -25,7 +25,7 @@ const ProjectCard = ({ project }: Props) => {
             className="flex items-center gap-1 text-primary"
           >
             {title}
-            <span aria-hidden="true">
+            <span aria-hidden="true" className="text-fg">
               <Link />
             </span>
           </a>

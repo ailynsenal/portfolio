@@ -15,7 +15,7 @@ const TimelineItem = ({ isLast, variant = "job", children }: Props) => {
         <div className="absolute left-4 top-0 h-full w-px bg-line/20" />
       )}
       <div
-        className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 bg-neutral-800 ${
+        className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 bg-page ${
           isJob ? "border-accent" : "border-line/20"
         }`}
       >
