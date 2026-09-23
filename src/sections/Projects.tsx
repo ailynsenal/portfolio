@@ -1,38 +1,17 @@
-import { motion } from "motion/react";
-import Project from "../components/Project";
-import { projects } from "../data/project";
+import FadeIn from "../components/FadeIn";
+import ProjectCard from "../components/ProjectCard";
+import Section from "../components/Section";
+import { projects } from "../constants/projects";
 
-import type { SectionRef } from "../types";
-
-interface Props {
-  ref: SectionRef;
-}
-
-const Projects = ({ ref }: Props) => {
+const Projects = () => {
   return (
-    <section id="projects" className="flex flex-col gap-12 py-24" ref={ref}>
-      <h1 className="text-4xl">Projects</h1>
-      <motion.div
-        className="relative flex flex-col gap-12 sm:flex-row"
-        initial={{
-          opacity: 0,
-          y: 100,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 1,
-            ease: "easeIn",
-          },
-        }}
-        viewport={{ once: true, amount: 0 }}
-      >
-        {projects.map((project, index) => (
-          <Project key={index} item={project} />
+    <Section id="projects" title="Projects">
+      <FadeIn className="grid gap-12 sm:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
-      </motion.div>
-    </section>
+      </FadeIn>
+    </Section>
   );
 };
 

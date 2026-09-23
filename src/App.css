@@ -6,14 +6,11 @@
   --font-roboto: "Roboto", sans-serif;
 }
 
-.text-primary {
-  @apply text-rose-400;
-}
-
-.text-secondary {
-  @apply text-rose-300;
-}
-
-.text-tertiary {
-  @apply text-gray-400;
+/* Colour tokens — each generates text-*, bg-*, border-* utilities. */
+@theme inline {
+  --color-primary: var(--color-emerald-400);
+  --color-secondary: var(--color-emerald-300);
+  --color-tertiary: var(--color-gray-400);
+  --color-accent: var(--color-emerald-500);
+  --color-line: var(--color-emerald-100);
 }

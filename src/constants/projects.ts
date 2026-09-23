@@ -1,7 +1,7 @@
 import ErrorFinding from "../assets/images/error-finding.png";
-import Typing from "../assets/gifs/typing.webp";
+import type { ProjectItem } from "../types";
 
-export const projects = [
+export const projects: ProjectItem[] = [
   {
     id: "errorFinding",
     title: "Error Finding",
@@ -9,12 +9,5 @@ export const projects = [
       "This game will help you practice your English skills by finding mistakes in written text.",
     logo: ErrorFinding,
     link: "https://cae-error-finder.netlify.app/",
-  },
-  {
-    id: "inProgress",
-    title: "In Progress...",
-    description: "",
-    logo: Typing,
-    link: null,
   },
 ];

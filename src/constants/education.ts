@@ -1,6 +1,7 @@
 import UCP from "../assets/images/ucp.png";
+import type { EducationItem } from "../types";
 
-export const education = [
+export const education: EducationItem[] = [
   {
     id: "tertiary",
     course: "Bachelor of Science in Information Technology",
