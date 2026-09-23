@@ -1,6 +1,6 @@
 import React from "../assets/svgs/React";
 import Redux from "../assets/svgs/Redux";
-import Javacript from "../assets/svgs/Javacript";
+import JavaScript from "../assets/svgs/JavaScript";
 import Typescript from "../assets/svgs/Typescript";
 import HTML from "../assets/svgs/HTML";
 import CSS from "../assets/svgs/CSS";
@@ -18,7 +18,7 @@ import Contentful from "../assets/images/contentful.png";
 import Storybook from "../assets/images/storybook.png";
 
 const frameworks = [
-  { icon: <Javacript />, img: "", label: "Javacript" },
+  { icon: <JavaScript />, img: "", label: "JavaScript" },
   { icon: <Typescript />, img: "", label: "Typescript" },
   { icon: <React />, img: "", label: "React / React Native" },
   { icon: <Node />, img: "", label: "Node.js" },

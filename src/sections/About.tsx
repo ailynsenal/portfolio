@@ -65,6 +65,7 @@ const About = ({ ref }: Props) => {
               className="flex flex-row items-center gap-6 font-roboto text-lg"
             >
               <img
+                loading="lazy"
                 src={edu.logo}
                 alt={edu.school}
                 className="rounded-full w-28"
